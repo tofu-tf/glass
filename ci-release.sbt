@@ -46,21 +46,15 @@ ThisBuild / developers       := List(
 ThisBuild / organization     := "tf.tofu"
 ThisBuild / organizationName := "Tofu"
 
-ThisBuild / homepage := Some(url("https://github.com/tofu-tf/tofu"))
+ThisBuild / homepage := Some(url("https://github.com/tofu-tf/glass"))
 
-ThisBuild / description := "Opinionated set of tools for functional programming in Scala"
+ThisBuild / description := "Modern optic library for Scala"
 
 ThisBuild / scmInfo                   := Some(
   ScmInfo(
-    url("https://github.com/tofu-tf/tofu"),
-    "git@github.com:tofu-tf/tofu.git"
+    url("https://github.com/tofu-tf/glass"),
+    "git@github.com:tofu-tf/glass.git"
   )
-)
-
-ThisBuild / githubWorkflowBuildPostamble += WorkflowStep.Sbt(
-  name = Some("Generate docs"),
-  commands = List("docs/mdoc"),
-  cond = Some("startsWith(matrix.scala, '2.13')")
 )
 
 ThisBuild / githubWorkflowEnv += "CI" -> "true"

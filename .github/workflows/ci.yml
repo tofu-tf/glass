@@ -68,10 +68,6 @@ jobs:
       - name: Build project
         run: sbt ++${{ matrix.scala }} test
 
-      - name: Generate docs
-        if: startsWith(matrix.scala, '2.13')
-        run: sbt ++${{ matrix.scala }} docs/mdoc
-
       - name: Compress target directories
         run: tar cf targets.tar target modules/core/target modules/interop/target modules/macro/target project/target
 
