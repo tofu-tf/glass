@@ -1,6 +1,6 @@
 package glass.classes
 
-import tofu.optics.{Extract, Upcast}
+import glass.{Extract, Upcast}
 
 object Transform extends TransformInstances {
   final implicit def fromExtract[A, B](implicit

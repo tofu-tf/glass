@@ -4,7 +4,7 @@ sealed trait A
 case object B extends A
 case object C extends A
 
-import tofu.optics.macros.{promote => prololo}
+import glass.macros.{promote => prololo}
 object A {
   val b = GenSubset[A, B.type]
 }

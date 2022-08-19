@@ -1,6 +1,7 @@
-package glass.tags
+package glass
+package tags
 
-import tofu.optics.functions
+import glass.functions
 
 object index extends TaggerObj[PProperty] {
   implicit def indexMap[K, V]: TagApply[PProperty, Map[K, V], V, this.type, K] =

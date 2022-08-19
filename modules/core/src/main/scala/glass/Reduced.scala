@@ -2,7 +2,7 @@ package glass
 
 import cats._
 import cats.data.NonEmptyList
-import tofu.optics.data._
+import glass.data._
 import cats.syntax.semigroup._
 import cats.instances.option._
 

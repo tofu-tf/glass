@@ -1,6 +1,6 @@
 package glass.macros
 
-import tofu.optics.Equivalent
+import glass.Equivalent
 
 import scala.reflect.internal.SymbolTable
 import scala.reflect.macros.{blackbox, whitebox}
@@ -43,7 +43,7 @@ sealed abstract class GenEquivalentImplBase {
 
       val name = s"${sTpe.typeSymbol.name.decodedName}.type<->"
       q"""
-        _root_.tofu.optics.Equivalent[${sTpe}]($name)(Function.const(()))(Function.const(${obj}))
+        _root_.glass.Equivalent[${sTpe}]($name)(Function.const(()))(Function.const(${obj}))
       """
     } else {
       val name = s"${sTpe.typeSymbol.name.decodedName}<->"
@@ -51,7 +51,7 @@ sealed abstract class GenEquivalentImplBase {
         case Nil =>
           val sTpeSym = sTpe.typeSymbol.companion
           q"""
-            _root_.tofu.optics.Equivalent[${sTpe}]($name)(Function.const(()))(Function.const(${sTpeSym}()))
+            _root_.glass.Equivalent[${sTpe}]($name)(Function.const(()))(Function.const(${sTpeSym}()))
           """
         case _   => fail(s"$sTpe needs to be a case class with no accessor or an object.")
       }
@@ -77,7 +77,7 @@ class GenEquivalentImpl(override val c: blackbox.Context) extends GenEquivalentI
     val name    = s"${sTpeSym.name.decodedName}<->"
 
     c.Expr[Equivalent[S, A]](q"""
-      import _root_.tofu.optics.Equivalent
+      import _root_.glass.Equivalent
       Equivalent[$sTpe]($name)((s: $sTpe) => s.$fieldMethod)((a: $aTpe) => $sTpeSym(a))
     """)
   }
@@ -125,7 +125,7 @@ class GenEquivalentImplW(override val c: whitebox.Context) extends GenEquivalent
         val (pName, pType) = nameAndType(sTpe, param)
 
         q"""
-          import _root_.tofu.optics.Equivalent
+          import _root_.glass.Equivalent
           Equivalent[$sTpe]($name)((s: $sTpe) => s.$pName)((a: $pType) => ${sTpeSym.companion}(a))
         """
 
@@ -141,7 +141,7 @@ class GenEquivalentImplW(override val c: whitebox.Context) extends GenEquivalent
         }
 
         q"""
-          import _root_.tofu.optics.Equivalent
+          import _root_.glass.Equivalent
           Equivalent[$sTpe]($name)(
             (s: $sTpe) => (..$readField)
             )(

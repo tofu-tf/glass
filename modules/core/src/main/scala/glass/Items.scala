@@ -2,7 +2,7 @@ package glass
 
 import alleycats.Pure
 import cats._
-import tofu.optics.data._
+import glass.data._
 
 /** aka Traversal S has some or none occurences of A and can update them using some effect
   */

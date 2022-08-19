@@ -1,6 +1,6 @@
 package glass.macros.internal
 
-import tofu.optics.{Contains, PContains}
+import glass.{Contains, PContains}
 
 import scala.reflect.macros.blackbox
 
@@ -46,7 +46,7 @@ private[macros] class MacroImpl(val c: blackbox.Context) {
             )
           ) if termDefName.decodedName.toString == termUseName.decodedName.toString =>
         c.Expr[Contains[S, A]](
-          typesFields.map { case (t, f) => q"_root_.tofu.optics.macros.GenContains[$t](_.$f)" }
+          typesFields.map { case (t, f) => q"_root_.glass.macros.GenContains[$t](_.$f)" }
             .reduce((a, b) => q"$a andThen $b")
         )
 
@@ -81,7 +81,7 @@ private[macros] class MacroImpl(val c: blackbox.Context) {
 
     val name = s"_.$strFieldName"
     c.Expr[PContains[S, T, A, B]](q"""
-      import _root_.tofu.optics.PContains
+      import _root_.glass.PContains
       import _root_.scala.language.higherKinds // prevent warning at call site
 
       PContains[$sTpe, $bTpe][$aTpe, $tTpe]($name)((s : $sTpe) => s.$fieldMethod)((s: $sTpe, a: $bTpe) => s.copy($field = a))

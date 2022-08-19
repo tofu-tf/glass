@@ -10,8 +10,8 @@ import cats.syntax.foldable._
 import cats.instances.list._
 import cats.instances.vector._
 
-import tofu.optics.compat.LazySeq
-import tofu.optics.compat.lazySeqInstances._
+import glass.compat.LazySeq
+import glass.compat.lazySeqInstances._
 
 object functions extends CollectionFunctions with TupleFunctions with ContainerFunctions {
   def extractSubtype[A <: B, B]: Extract[A, B] = (s: B) => s

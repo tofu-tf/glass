@@ -3,8 +3,8 @@ package glass
 import cats.data.NonEmptyList
 import cats.kernel.Semigroup
 import cats.{Applicative, Apply, Monoid}
-import tofu.optics.classes.Category2
-import tofu.optics.tags.{PTagApply, Tagger}
+import glass.classes.Category2
+import glass.tags.{PTagApply, Tagger}
 
 final case class Applied[O[_, _, _, _], S, T, A, B](s: S, o: O[S, T, A, B]) {
   def >>[O1[s, t, a, b] >: O[s, t, a, b]: Category2, U, V](o1: O1[A, B, U, V]): Applied[O1, S, T, U, V] =

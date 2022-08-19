@@ -1,4 +1,4 @@
-package tofu.optics.macros
+package glass.macros
 
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers.shouldBe

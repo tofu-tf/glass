@@ -3,8 +3,8 @@ package glass
 import cats._
 import cats.data._
 import cats.syntax.functor._
-import tofu.optics.classes.PChoice
-import tofu.optics.data._
+import glass.classes.PChoice
+import glass.data._
 
 /** aka Lens S has exactly one A and can update it
   */

@@ -1,6 +1,6 @@
 package glass.macros
 
-import tofu.optics.Subset
+import glass.Subset
 
 import scala.reflect.macros.blackbox
 
@@ -18,7 +18,7 @@ private class GenSubsetImpl(val c: blackbox.Context) {
     val aName        = ":" + (aTpe: Type).typeSymbol.name.decodedName.toString()
 
     c.Expr[Subset[S, A]](q"""
-      _root_.tofu.optics.PSubset[$sTpe, $aTpe]($aName)(
+      _root_.glass.PSubset[$sTpe, $aTpe]($aName)(
         (s: $sTpe) => 
           if(s.isInstanceOf[$aTpe]) Right(s.asInstanceOf[$aTpe])
           else Left(s)

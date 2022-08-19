@@ -1,4 +1,4 @@
-package tofu.optics.macros
+package glass.macros
 
 sealed trait A
 case object B extends A

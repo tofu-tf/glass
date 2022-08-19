@@ -1,8 +1,8 @@
-package tofu.optics.macros
+package glass.macros
 
 import scala.quoted.*
 
-import tofu.optics.Subset
+import glass.Subset
 
 object GenSubset:
   inline def apply[S, A <: S]: Subset[S, A] = ${ mkSubset[S, A] }

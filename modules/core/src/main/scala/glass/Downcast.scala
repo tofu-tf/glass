@@ -3,7 +3,7 @@ package glass
 import cats.Monoid
 import cats.instances.option._
 import cats.syntax.foldable._
-import tofu.optics.data.Constant
+import glass.data.Constant
 
 import scala.reflect.{ClassTag, classTag}
 

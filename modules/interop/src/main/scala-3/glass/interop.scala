@@ -88,7 +88,7 @@ object interop {
   implicit final class UpdateInteropOps[S, T, A, B](private val update: PUpdate[S, T, A, B]) extends AnyVal {
     def toSetter: PSetter[S, T, A, B] = new PSetter[S, T, A, B] {
       def modify(f: A => B): S => T = update.update(_, f)
-      def replace(b: B): S => T         = update.put(_, b)
+      def replace(b: B): S => T     = update.put(_, b)
     }
   }
 

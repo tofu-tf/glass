@@ -3,7 +3,7 @@ package glass
 import cats._
 import cats.arrow._
 import cats.instances.function._
-import tofu.optics.data._
+import glass.data._
 
 /** aka Iso S and B share same information
   */

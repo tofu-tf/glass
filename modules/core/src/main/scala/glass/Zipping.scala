@@ -2,12 +2,12 @@ package glass
 
 import cats.Functor
 import cats.syntax.functor._
-import tofu.optics.data.Identity
-import tofu.optics.data.CoKleisli
+import glass.data.Identity
+import glass.data.CoKleisli
 import cats.arrow.Profunctor
 import cats.instances.function._
 import cats.Applicative
-import tofu.optics.compat.uv212
+import glass.compat.uv212
 
 /** aka Grate see https://r6research.livejournal.com/28050.html
   */

@@ -1,6 +1,7 @@
-package glass.tags
+package glass
+package tags
 
-import tofu.optics.functions
+import glass.functions
 
 object at extends TaggerObj[PContains] {
   implicit def atMap[K, V]: TagApply[PContains, Map[K, V], Option[V], this.type, K] =

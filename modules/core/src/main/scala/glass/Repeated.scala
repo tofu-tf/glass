@@ -1,7 +1,7 @@
 package glass
 
 import cats._
-import tofu.optics.data._
+import glass.data._
 
 /** aka NonEmptyTraversal S has some occurrences of A and can update them using some effect
   */

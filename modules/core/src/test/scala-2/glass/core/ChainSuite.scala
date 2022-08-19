@@ -1,8 +1,9 @@
-package glass.core
+package glass
+package core
 
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
-import tofu.optics.tags.{every, index}
+import glass.tags.{every, index}
 
 import language.postfixOps
 

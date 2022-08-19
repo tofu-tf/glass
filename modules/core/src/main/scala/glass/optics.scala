@@ -1,10 +1,10 @@
 package glass
 
-import cats.arrow._
-import tofu.optics.classes.Category2
-import tofu.optics.tags.Tagger
-import tofu.optics.classes.Delayed
-import tofu.optics.compat.uv212
+import cats.arrow.*
+import glass.classes.Category2
+import glass.tags.Tagger
+import glass.classes.Delayed
+import glass.compat.uv212
 
 trait OpticCompanion[O[-s, +t, +a, -b] >: PSame[s, t, a, b] @uv212] {
   self =>

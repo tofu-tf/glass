@@ -4,7 +4,7 @@ import cats.instances.list._
 import cats.instances.vector._
 import cats.syntax.monoid._
 import cats.{Applicative, Foldable, Monoid}
-import tofu.optics.data._
+import glass.data._
 
 /** S has some or none occurrences of A and can collect them
   */

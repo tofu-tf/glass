@@ -7,7 +7,7 @@ import cats.syntax.either._
 import cats.syntax.foldable._
 import cats.syntax.functor._
 import cats.{Applicative, Functor, Monoid}
-import tofu.optics.data.Identity
+import glass.data.Identity
 
 /** aka Optional S may or may not contain single element of A which may be set to B and change whole type to T
   */

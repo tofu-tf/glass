@@ -1,11 +1,14 @@
 package glass.macros.internal
 
-def unapply(using quotes: Quotes)(expr: Expr[Any]): Option[quotes.reflect.Term] = {
+import scala.quoted.*
+
+object AsTerm:
+  def unapply(using quotes: Quotes)(expr: Expr[Any]): Option[quotes.reflect.Term] = {
     import quotes.reflect.*
     Some(expr.asTerm)
   }
 
-object AsTerm:
+object AnonfunBlock:
   def unapply(using quotes: Quotes)(term: quotes.reflect.Term): Option[(String, quotes.reflect.Term)] = {
     import quotes.reflect.*
     term match {
@@ -14,13 +17,13 @@ object AsTerm:
     }
   }
 
-object AnonfunBlock:
+object CaseClass:
   def unapply(using quotes: Quotes)(term: quotes.reflect.Term): Option[quotes.reflect.Term] =
     term.tpe.classSymbol.flatMap { sym =>
       Option.when(sym.flags.is(quotes.reflect.Flags.Case))(term)
     }
 
-object CaseClass:
+object FieldType:
   def unapply(using quotes: Quotes)(fieldSymbol: quotes.reflect.Symbol): Option[quotes.reflect.TypeRepr] =
     import quotes.reflect.*
 
@@ -47,3 +50,4 @@ def getSuppliedTypeArgs(using quotes: Quotes)(fromType: quotes.reflect.TypeRepr)
   fromType match {
     case quotes.reflect.AppliedType(_, argTypeReprs) => argTypeReprs
     case _                                           => Nil
+  }

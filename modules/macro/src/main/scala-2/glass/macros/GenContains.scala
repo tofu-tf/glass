@@ -1,7 +1,7 @@
 package glass.macros
 
-import tofu.optics.Contains
-import tofu.optics.macros.internal.MacroImpl
+import glass.Contains
+import glass.macros.internal.MacroImpl
 
 class GenContains[A] {
 

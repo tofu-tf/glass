@@ -1,7 +1,7 @@
 package glass.macros
 
-import tofu.optics.compat.unused
-import tofu.optics.PContains
+import glass.compat.unused
+import glass.PContains
 
 import scala.reflect.macros.blackbox
 
@@ -59,7 +59,7 @@ private[macros] class OpticsImpl(val c: blackbox.Context) {
     def labelClass(p: ValDef, res: Tree)(s: Tree, t: Tree, a: Tree, b: Tree): (Tree, Tree) = {
       val fieldName     = p.name.toString
       def labelT        = labelType(fieldName)
-      def classyT: Tree = tq"$PContainsC[$s, $t, $a, $b] with _root_.tofu.optics.Label[$labelT]"
+      def classyT: Tree = tq"$PContainsC[$s, $t, $a, $b] with _root_.glass.Label[$labelT]"
       (q"$res.label[$labelT]", classyT)
     }
 
@@ -67,7 +67,7 @@ private[macros] class OpticsImpl(val c: blackbox.Context) {
       val lensName = TermName(prefix + param.name.decodedName)
 
       val res =
-        q"""_root_.tofu.optics.macros.internal.Macro.mkContains[$tpname, $tpname, ${param.tpt}, ${param.tpt}](${param.name.toString})"""
+        q"""_root_.glass.macros.internal.Macro.mkContains[$tpname, $tpname, ${param.tpt}, ${param.tpt}](${param.name.toString})"""
 
       lazy val (resClassy, classyT) = labelClass(param, res)(tq"$tpname", tq"$tpname", param.tpt, param.tpt)
 
@@ -86,7 +86,7 @@ private[macros] class OpticsImpl(val c: blackbox.Context) {
           val q"x: $s" = q"x: $tpname[..${tparams.map(_.name)}]"
           val q"x: $a" = q"x: ${param.tpt}"
 
-          val res = q"_root_.tofu.optics.macros.internal.Macro.mkContains[$s, $s, $a, $a](${param.name.toString})"
+          val res = q"_root_.glass.macros.internal.Macro.mkContains[$s, $s, $a, $a](${param.name.toString})"
 
           lazy val (resClassy, classyT) = labelClass(param, res)(s, s, a, a)
           if (classy)
@@ -137,7 +137,7 @@ private[macros] class OpticsImpl(val c: blackbox.Context) {
           val q"x: $t"                  = q"x: $tpname[..${tparams.map(x => tpnamesMap(x.name))}]"
           val q"x: $a"                  = q"x: ${param.tpt}"
           val q"x: $b"                  = q"x: ${tptTransformer.transform(param.tpt)}"
-          val res                       = q"_root_.tofu.optics.macros.internal.Macro.mkContains[$s, $t, $a, $b](${param.name.toString})"
+          val res                       = q"_root_.glass.macros.internal.Macro.mkContains[$s, $t, $a, $b](${param.name.toString})"
           lazy val (resClassy, classyT) = labelClass(param, res)(s, t, a, b)
 
           if (classy) List(q"implicit def $lensName[..$defParams] : $classyT = $resClassy")

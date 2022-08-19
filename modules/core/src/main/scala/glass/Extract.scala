@@ -1,7 +1,7 @@
 package glass
 
 import cats.{Functor, Monoid, Semigroup}
-import tofu.optics.data._
+import glass.data._
 
 /** aka Getter A has exactly one B mere function from A to B and part of Lens
   */

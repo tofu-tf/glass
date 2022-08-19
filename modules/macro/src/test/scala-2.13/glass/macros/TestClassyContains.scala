@@ -1,6 +1,5 @@
 package glass.macros
-
-import tofu.optics.{Contains, Label, PContains, Update}
+import glass.{Contains, Label, PContains, Update}
 
 object TestClassyContains {
   // compile test for searching classy optics

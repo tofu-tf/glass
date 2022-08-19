@@ -1,6 +1,5 @@
 package glass.tags
-
-import tofu.optics.PContains
+import glass.PContains
 
 object field extends TaggerObj[PContains] {
   implicit def field1T2[A, B, A1]: PTagApply[PContains, (A, B), (A1, B), A, A1, this.type, first.type] =

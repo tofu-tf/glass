@@ -4,13 +4,13 @@ import cats.arrow.Profunctor
 import cats.syntax.functor.*
 import cats.Functor
 import cats.arrow.Compose
-import tofu.optics.classes.PChoice
+import glass.classes.PChoice
 import cats.kernel.Monoid
 import cats.Applicative
 import cats.syntax.monoid.*
 import cats.kernel.Semigroup
 import cats.Apply
-import tofu.optics.data.*
+import glass.data.*
 
 object data extends DataInstancesLv0 {
   type Identity[+A]             = A

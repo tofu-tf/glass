@@ -6,10 +6,10 @@ import cats.instances.either._
 import cats.instances.option._
 import cats.syntax.either._
 import cats.syntax.profunctor._
-import tofu.optics.Subset.ByDowncast
-import tofu.optics.data.Identity
-import tofu.optics.classes.PChoice
-import tofu.optics.data._
+import glass.Subset.ByDowncast
+import glass.data.Identity
+import glass.classes.PChoice
+import glass.data._
 
 import scala.reflect.ClassTag
 

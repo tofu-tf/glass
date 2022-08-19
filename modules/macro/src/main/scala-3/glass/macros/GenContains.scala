@@ -1,9 +1,9 @@
-package tofu.optics.macros
+package glass.macros
 
 import scala.quoted.*
 
-import tofu.optics.Contains
-import tofu.optics.macros.internal.*
+import glass.Contains
+import glass.macros.internal.*
 import scala.annotation.tailrec
 
 object GenContains:

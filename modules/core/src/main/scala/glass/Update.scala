@@ -1,7 +1,7 @@
 package glass
 
 import cats.{Applicative, Functor}
-import tofu.optics.data.Identity
+import glass.data.Identity
 
 /** aka Setter can update all occurrences of A in S
   */

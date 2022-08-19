@@ -2,9 +2,9 @@ package glass
 
 import alleycats.Pure
 import cats.{Functor, Id}
-import tofu.optics.compat.unused212
-import tofu.optics.classes.PChoice
-import tofu.optics.data._
+import glass.compat.unused212
+import glass.classes.PChoice
+import glass.data._
 
 trait PUpcast[-S, +T, +A, -B] extends PBase[PUpcast, S, T, A, B] {
   def upcast(b: B): T

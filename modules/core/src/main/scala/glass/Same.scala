@@ -1,6 +1,6 @@
 package glass
 
-import tofu.optics.compat.unused
+import glass.compat.unused
 
 /** polymorphic equality: any relation for S and T equal to relation of A and B */
 trait PSame[-S, +T, +A, -B] extends PEquivalent[S, T, A, B] with PBase[PSame, S, T, A, B] {
