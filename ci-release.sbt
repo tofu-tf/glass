@@ -9,7 +9,7 @@ ThisBuild / crossScalaVersions                  := Vector(
 ThisBuild / githubWorkflowTargetTags ++= Seq("v*")
 
 ThisBuild / githubWorkflowPublishTargetBranches := Seq(
-  RefPredicate.Equals(Ref.Branch("master")),
+  RefPredicate.Equals(Ref.Branch("main")),
   RefPredicate.StartsWith(Ref.Tag("v"))
 )
 
