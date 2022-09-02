@@ -1,6 +1,7 @@
 import Publish._, Dependencies._
 import com.typesafe.sbt.SbtGit.git
 import sbt.ModuleID
+import spray.boilerplate.BoilerplatePlugin
 
 lazy val setMinorVersion = minorVersion := {
   CrossVersion.partialVersion(scalaVersion.value) match {
@@ -42,6 +43,7 @@ lazy val defaultSettings = Seq(
 
 lazy val opticsCore = project
   .in(file("modules/core"))
+  .enablePlugins(BoilerplatePlugin)
   .settings(
     defaultSettings,
     libraryDependencies ++= Seq(catsCore, alleycats),
