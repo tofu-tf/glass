@@ -18,7 +18,7 @@ object Dependencies {
 
     val monocle212 = "2.1.0"
 
-    val scalatest = "3.2.13"
+    val scalatest = "3.2.14"
 
     // Compile time only
     val macroParadise = "2.1.1"
