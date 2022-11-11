@@ -3,7 +3,7 @@ package glass
 package object tuples {
      [#implicit class Tuple1Exts(val tpl: Tuple1.type) extends AnyVal {
         [#def _1[[#T1#]]: Contains[Tuple1[[#T1#]], T1] =
-            Contains((tpl: Tuple1[[#T1#]]) => tpl._1)((tpl: Tuple1[[#T1#]], v1: T1) => tpl.copy(_1 = v1))#
+            Contains[Tuple1[[#T1#]]]((tpl: Tuple1[[#T1#]]) => tpl._1)((tpl: Tuple1[[#T1#]], v1: T1) => tpl.copy(_1 = v1))#
         ]
      }#
 
