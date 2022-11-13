@@ -12,7 +12,7 @@ object Dependencies {
 
     val scala3 = "3.2.1"
 
-    val cats = "2.8.0"
+    val cats = "2.9.0"
 
     val monocle = "3.1.0"
 
