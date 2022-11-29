@@ -27,7 +27,7 @@ object Dependencies {
 
     val betterMonadicFor = "0.3.1"
 
-    val collectionCompat = "2.8.1"
+    val collectionCompat = "2.9.0"
   }
 
   val noCatsCore       =
