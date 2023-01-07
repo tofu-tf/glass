@@ -1,6 +1,10 @@
 package glass.macros
+
 import glass.{Contains, Label, PContains, Update}
 
+import scala.annotation.nowarn
+
+@nowarn("cat=other-pure-statement")
 object TestClassyContains {
   // compile test for searching classy optics
   implicitly[Contains[FooBar2, Int] with Label["i"]]
