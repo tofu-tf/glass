@@ -6,7 +6,9 @@ import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
 import glass.tags.{every, index}
 
 import language.postfixOps
+import scala.annotation.nowarn
 
+@nowarn("cat=other-pure-statement")
 class ChainSuite extends AnyFlatSpec {
   type Onion[A] = Map[String, Vector[List[Map[Boolean, A]]]]
 

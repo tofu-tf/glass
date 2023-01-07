@@ -3,6 +3,9 @@ package glass.macros
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
+import scala.annotation.nowarn
+
+@nowarn("cat=other-pure-statement")
 class GenContainsSpec extends AnyFunSuite with Matchers {
 
   test("Nested GenContains") {

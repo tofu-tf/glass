@@ -3,6 +3,9 @@ package glass.macros
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
+import scala.annotation.nowarn
+
+@nowarn("cat=other-pure-statement")
 class GenEquivalentSpec extends AnyFunSuite with Matchers {
   test("GenEquivalent fields") {
     val sut = GenEquivalent.fields[FooBar]
