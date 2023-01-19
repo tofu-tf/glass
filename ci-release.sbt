@@ -1,6 +1,6 @@
 ThisBuild / scalaVersion := Dependencies.Version.scala213
 
-ThisBuild / crossScalaVersions                  := Vector(
+ThisBuild / crossScalaVersions := Vector(
   Dependencies.Version.scala3,
   Dependencies.Version.scala213,
   Dependencies.Version.scala212
@@ -13,7 +13,7 @@ ThisBuild / githubWorkflowPublishTargetBranches := Seq(
   RefPredicate.StartsWith(Ref.Tag("v"))
 )
 
-ThisBuild / githubWorkflowJavaVersions          := Seq(JavaSpec.temurin("8"), JavaSpec.temurin("17"))
+ThisBuild / githubWorkflowJavaVersions := Seq(JavaSpec.temurin("8"), JavaSpec.temurin("17"))
 
 ThisBuild / githubWorkflowBuildPreamble += WorkflowStep.Sbt(
   List("scalafmtCheckAll", "scalafmtSbtCheck"),
@@ -36,7 +36,7 @@ ThisBuild / versionScheme         := Some("semver-spec")
 
 ThisBuild / licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 
-ThisBuild / developers       := List(
+ThisBuild / developers := List(
   Developer("catostrophe", "λoλcat", "catostrophe@pm.me", url("https://github.com/catostrophe")),
   Developer("danslapman", "Daniil Smirnov", "danslapman@gmail.com", url("https://github.com/danslapman")),
   Developer("odomontois", "Oleg Nizhnik", "odomontois@gmail.com", url("https://github.com/odomontois")),
@@ -50,7 +50,7 @@ ThisBuild / homepage := Some(url("https://github.com/tofu-tf/glass"))
 
 ThisBuild / description := "Modern optic library for Scala"
 
-ThisBuild / scmInfo                   := Some(
+ThisBuild / scmInfo := Some(
   ScmInfo(
     url("https://github.com/tofu-tf/glass"),
     "git@github.com:tofu-tf/glass.git"
