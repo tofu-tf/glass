@@ -1,5 +1,5 @@
 import Publish._, Dependencies._
-import com.typesafe.sbt.SbtGit.git
+import com.github.sbt.git.SbtGit.git
 import sbt.ModuleID
 import spray.boilerplate.BoilerplatePlugin
 
