@@ -91,11 +91,11 @@ object interop {
   }
 
   implicit final class ExtractInteropOps[S, T, A, B](private val extract: PExtract[S, T, A, B]) extends AnyVal {
-    def toGetter: Getter[S, A] = extract.extract
+    def toGetter: Getter[S, A] = extract.extract _
   }
 
   implicit final class GetterInteropOps[S, A](private val getter: Getter[S, A]) extends AnyVal {
-    def toExtract[T, B]: PExtract[S, T, A, B] = getter.get
+    def toExtract[T, B]: PExtract[S, T, A, B] = getter.get _
     def toExtractMono: Extract[S, A]          = toExtract[S, A]
   }
 
