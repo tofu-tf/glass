@@ -24,6 +24,6 @@ addSbtPlugin("com.github.sbt" % "sbt-github-actions" % "0.16.0")
 
 addSbtPlugin("com.github.sbt" % "sbt-ci-release" % "1.5.12")
 
-addSbtPlugin("org.scoverage" % "sbt-scoverage" % "2.0.8")
+addSbtPlugin("org.scoverage" % "sbt-scoverage" % "2.0.9")
 
 addSbtPlugin("io.spray" % "sbt-boilerplate" % "0.6.1")
