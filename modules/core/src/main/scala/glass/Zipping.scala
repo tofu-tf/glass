@@ -45,17 +45,19 @@ object PZipping extends OpticCompanion[PZipping] {
     def profunctor: Profunctor[P] = new CoKleisliProfunctor[G]
   }
 
-  override def toGeneric[S, T, A, B](o: PZipping[S, T, A, B]) = new Optic[Context, S, T, A, B] {
-    def apply(c: Context)(p: c.G[A] => B): c.G[S] => T =
-      o.combineWith(p)(_)(c.gfunctor)
-  }
+  override def toGeneric[S, T, A, B](o: PZipping[S, T, A, B]): Optic[Context, S, T, A, B] =
+    new Optic[Context, S, T, A, B] {
+      def apply(c: Context)(p: c.G[A] => B): c.G[S] => T =
+        o.combineWith(p)(_)(c.gfunctor)
+    }
 
-  override def fromGeneric[S, T, A, B](o: Optic[Context, S, T, A, B]) = new PZipping[S, T, A, B] {
-    def grate(sab: (S => A) => B): T = o(new Context {
-      type G[+a] = S => a
-      def gfunctor: Functor[G] = implicitly
-    })(sab)(identity)
-  }
+  override def fromGeneric[S, T, A, B](o: Optic[Context, S, T, A, B]): glass.PZipping[S, T, A, B] =
+    new PZipping[S, T, A, B] {
+      def grate(sab: (S => A) => B): T = o(new Context {
+        type G[+a] = S => a
+        def gfunctor: Functor[G] = implicitly
+      })(sab)(identity)
+    }
 }
 
 object Zipping extends MonoOpticCompanion(PZipping)

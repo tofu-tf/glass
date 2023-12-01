@@ -19,7 +19,7 @@ trait OpticCompanion[O[-s, +t, +a, -b] >: PSame[s, t, a, b] @uv212] {
   def delayed[S, T, A, B](o: () => O[S, T, A, B]): O[S, T, A, B]
 
   final implicit val category: Category[Mono] = new Category[Mono] {
-    def id[A]                                                      = PSame.id[A, A]
+    def id[A]: PSame[A, A, A, A]                                   = PSame.id[A, A]
     def compose[A, B, C](f: Mono[B, C], g: Mono[A, B]): Mono[A, C] = self.compose(f, g)
   }
 

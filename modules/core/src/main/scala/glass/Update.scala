@@ -37,7 +37,7 @@ object PUpdate extends OpticCompanion[PUpdate] {
   }
 
   class Context extends PZipping.Context with PItems.Context {
-    def gfunctor = Applicative[Identity]
+    def gfunctor: Applicative[Identity] = Applicative[Identity]
     override type G[+x] = x
   }
 
