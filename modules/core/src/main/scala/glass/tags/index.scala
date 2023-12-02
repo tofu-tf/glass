@@ -1,7 +1,7 @@
-package glass
-package tags
+package glass.tags
 
 import glass.functions
+import glass.PProperty
 
 object index extends TaggerObj[PProperty] {
   implicit def indexMap[K, V]: TagApply[PProperty, Map[K, V], V, this.type, K] =

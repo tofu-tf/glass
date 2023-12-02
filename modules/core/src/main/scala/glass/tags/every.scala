@@ -1,7 +1,7 @@
-package glass
-package tags
+package glass.tags
 
 import glass.functions
+import glass.PItems
 
 object every extends TaggerObj[PItems] {
   implicit def everyMap[K, V1, V2]: PTagApply[PItems, Map[K, V1], Map[K, V2], V1, V2, this.type, Unit] =

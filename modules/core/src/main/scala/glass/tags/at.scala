@@ -1,7 +1,7 @@
-package glass
-package tags
+package glass.tags
 
 import glass.functions
+import glass.PContains
 
 object at extends TaggerObj[PContains] {
   implicit def atMap[K, V]: TagApply[PContains, Map[K, V], Option[V], this.type, K] =

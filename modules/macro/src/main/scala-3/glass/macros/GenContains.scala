@@ -4,7 +4,6 @@ import scala.quoted.*
 
 import glass.Contains
 import glass.macros.internal.*
-import scala.annotation.tailrec
 
 object GenContains:
   def apply[A]: MkContains[A] = new MkContains[A]
