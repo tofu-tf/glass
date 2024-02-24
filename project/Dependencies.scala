@@ -23,7 +23,7 @@ object Dependencies {
     // Compile time only
     val macroParadise = "2.1.1"
 
-    val kindProjector = "0.13.2"
+    val kindProjector = "0.13.3"
 
     val betterMonadicFor = "0.3.1"
 
