@@ -10,7 +10,7 @@ object Dependencies {
 
     val scala213 = "2.13.13"
 
-    val scala3 = "3.3.1"
+    val scala3 = "3.3.3"
 
     val cats = "2.10.0"
 
