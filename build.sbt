@@ -11,7 +11,7 @@ lazy val setMinorVersion = minorVersion := {
 }
 
 lazy val defaultSettings = Seq(
-  scalaVersion       := Version.scala213,
+  scalaVersion       := Version.scala3,
   crossScalaVersions := Vector(Version.scala212, Version.scala213, Version.scala3),
   setMinorVersion,
   defaultScalacOptions,
