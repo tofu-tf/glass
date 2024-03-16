@@ -18,3 +18,4 @@ node_modules/
 .bsp
 *.db
 .jvmopts
+**/.DS_Store

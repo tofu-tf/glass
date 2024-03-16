@@ -1,8 +1,6 @@
 /** a collection of classic monomorphic optics based on http://hackage.haskell.org/package/lens and
   * http://julien-truffaut.github.io/Monocle/ using names readable for user unfamiliar with then capable for using as
   * implicit evidences in effect transmogrification
-  *
-  * see hierarchy here: https://wiki.tcsbank.ru/display/API/optics
   */
 package object glass {
   type Same[A, B]       = PSame[A, A, B, B]

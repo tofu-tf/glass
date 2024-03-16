@@ -77,7 +77,16 @@ lazy val opticsMacro = project
       )
       opts.filterNot(opt => suppressed.exists(opt.contains))
     },
-    name := "glass-macro"
+    name := "glass-macro",
+    libraryDependencies ++= {
+      CrossVersion.partialVersion(scalaVersion.value) match {
+        case Some((3, _)) =>
+          Seq(
+            "io.github.kitlangton" %% "quotidian" % "0.0.14"
+          )
+        case _            => Seq.empty
+      }
+    }
   )
 
 lazy val coreModules =
