@@ -14,7 +14,7 @@ object Dependencies {
 
     val cats = "2.12.0"
 
-    val monocle = "3.2.0"
+    val monocle = "3.3.0"
 
     val monocle212 = "2.1.0"
 
