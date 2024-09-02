@@ -7,6 +7,6 @@ class GenSubsetSpec extends AnyFunSuite:
   test("Subset narrow") {
     val subset = GenSubset[A, B.type]
 
-    subset.narrow(C) shouldBe Left(C)
+    val _ = subset.narrow(C) shouldBe Left(C)
     subset.narrow(B) shouldBe Right(B)
   }
