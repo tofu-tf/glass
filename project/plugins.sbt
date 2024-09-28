@@ -2,7 +2,7 @@ logLevel := Level.Warn
 
 addSbtPlugin("com.github.sbt" % "sbt-git" % "2.0.1")
 
-addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.12.1")
+addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.13.0")
 
 addSbtPlugin("org.xerial.sbt" % "sbt-sonatype" % "3.11.3")
 
