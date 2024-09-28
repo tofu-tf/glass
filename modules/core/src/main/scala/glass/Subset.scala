@@ -7,7 +7,6 @@ import cats.instances.option._
 import cats.syntax.either._
 import cats.syntax.profunctor._
 import glass.Subset.ByDowncast
-import glass.data.Identity
 import glass.classes.PChoice
 import glass.data._
 
