@@ -82,7 +82,7 @@ lazy val opticsMacro = project
       CrossVersion.partialVersion(scalaVersion.value) match {
         case Some((3, _)) =>
           Seq(
-            "io.github.kitlangton" %% "quotidian" % "0.0.17"
+            "io.github.kitlangton" %% "quotidian" % "0.0.18"
           )
         case _            => Seq.empty
       }
