@@ -1,6 +1,6 @@
 logLevel := Level.Warn
 
-addSbtPlugin("com.github.sbt" % "sbt-git" % "2.0.1")
+addSbtPlugin("com.github.sbt" % "sbt-git" % "2.1.0")
 
 addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.13.0")
 
